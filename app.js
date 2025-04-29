@@ -7,19 +7,19 @@ const screen = document.querySelector('#calc-screen')
 
 
 function add(num1, num2) {
-    return (Number(num1) + Number(num2)).toString()
+    return parseFloat(((Number(num1) + Number(num2)).toFixed(3))).toString()
 }
 
 function minus(num1, num2) {
-    return (Number(num1) - Number(num2)).toString() 
+    return parseFloat(((Number(num1) - Number(num2)).toFixed(3))).toString() 
 }
 
 function multiply(num1, num2) {
-    return (Number(num1) * Number(num2)).toString() 
+    return parseFloat(((Number(num1) * Number(num2)).toFixed(3))).toString()
 }
 
 function divide(num1, num2) {
-    return (Number(num1) / Number(num2)).toString() 
+    return parseFloat(((Number(num1) / Number(num2)).toFixed(3))).toString() 
 }
 
 function operate(operator, num1, num2) {
@@ -32,7 +32,7 @@ function operate(operator, num1, num2) {
     } else if (operator === '/') {
         if (num2 === '0') {
             console.log("Don't you dare divide by zero!")
-            return "THAT's ILLEGAL"
+            return "ILLEGAL"
         } else {
             return divide(num1, num2)
         }
@@ -66,7 +66,6 @@ function special_buttons(character) {
         }
     }
 }
-
 
 calc_buttons.addEventListener('click', (e) => {
     if (e.target.className === 'numbers') {
